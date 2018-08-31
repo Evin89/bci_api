@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	# user
+	RewriteRule ^objectives/([0-9]*)$	 index.php/?type=objective&id=$1
+	RewriteRule ^scenarios/([0-9]*)$	 index.php/?type=scenario&id=$1
+	RewriteRule ^objectives index.php/?type=objective
+	RewriteRule ^scenarios index.php/?type=scenario
+	RewriteRule ^about faq.html
+    RewriteRule .? - [E=HTTP_CONTENT_TYPE:%{HTTP:Content-Type}]
+
+</IfModule>
